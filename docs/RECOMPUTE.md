@@ -64,9 +64,7 @@ redistributing any source input.
 |---|---|
 | `precompute_bt_evidence.py` | ProteinMPNN structure scores, MSA statistics, UniProt annotations, WT sequences |
 | `precompute_phenotype.py` | AlphaMissense / EVEscape phenotype tables |
-| `precompute_foldx.py` | optional local FoldX ΔΔG tables |
-| `precompute_interface_evidence.py` | structure-derived functional-site evidence |
-| `precompute_metal_sites.py` | FoldX applicability notes |
+| FoldX-live | configured under `conditions.tools.phenotype.foldx`; no precompute step |
 
 ## 5. Verification
 

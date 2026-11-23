@@ -103,20 +103,15 @@ python scripts/precompute_phenotype.py \
   --data-dir ./data --evidence-dir ./data/bt_evidence \
   --scenario my_scenario --am-tsv /path/to/AlphaMissense.tsv.gz
 
-# Structure-derived functional-site evidence
-python scripts/precompute_interface_evidence.py \
-  --config configs/generations/config_custom.yaml \
-  --data-dir ./data --evidence-dir ./data/bt_evidence \
-  --scenario my_scenario --pdb /path/to/structure.pdb
-
-# FoldX: prefer the runtime configuration for new scenarios
+# FoldX / structure-derived evidence: use the runtime configuration
 # conditions.tools.phenotype.foldx.pdb / .chain
 ```
 
 Notes:
 
-- `precompute_foldx.py` supports a fixed set of legacy scenarios; for a new
-  scenario configure the runtime FoldX backend instead.
+- The legacy `precompute_foldx.py` / `precompute_interface_evidence.py`
+  fixed-scenario drivers are not part of the public bundle. Configure the
+  runtime FoldX backend instead.
 - The precompute scripts read WT/PDB/annotation data, never the benchmark GT.
   Keep it that way (R1a).
 - AlphaMissense is a human-pathogenicity proxy and is not appropriate for

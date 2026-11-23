@@ -73,6 +73,7 @@ python scripts/preflight.py --preset benchmark --provider default \
   --models <model-id> --strict
 
 python tests/test_benchmark_config.py
+python tests/test_public_scope.py
 python tests/test_bdt_tools.py
 python scripts/verify_bdt_artifacts.py --preset bdt_oracle --skip-models
 python scripts/verify_bdt_artifacts.py --preset bdt_zeroshot --skip-models
