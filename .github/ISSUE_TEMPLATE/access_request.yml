@@ -1,0 +1,52 @@
+name: Access request
+description: Request access to the gated DRYLAB-Bench dataset
+title: "[access] "
+labels: ["access"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Access is granted through the gated Hugging Face dataset. Prefer the
+        request form on the dataset page:
+        https://huggingface.co/datasets/drylab-bench/benchmark
+
+        Use this issue only if the Hugging Face form is unavailable.
+  - type: input
+    id: hf_username
+    attributes:
+      label: Hugging Face username
+      placeholder: your-hf-username
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: Affiliation
+      placeholder: University / company / independent
+    validations:
+      required: true
+  - type: dropdown
+    id: requester_type
+    attributes:
+      label: Requester type
+      options:
+        - Academic researcher
+        - Industry researcher
+        - Paper reviewer
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: intended_use
+    attributes:
+      label: Intended use
+      description: Briefly describe the safety-evaluation or defensive research use.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Responsible Use Terms
+      options:
+        - label: I have read and agree to the Responsible Use Terms.
+          required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Gated dataset and access form
+    url: https://huggingface.co/datasets/drylab-bench/benchmark
+    about: Request access to the benchmark code, scenarios, and evidence.
+  - name: Security or misuse report
+    url: https://github.com/DRYLAB-Bench/DRYLAB-Bench/security/policy
+    about: Report vulnerabilities or misuse privately.

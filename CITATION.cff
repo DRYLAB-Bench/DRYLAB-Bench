@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use DRYLAB-Bench, please cite the software and the accompanying paper."
+title: "DRYLAB-Bench: A Biosecurity Benchmark for LLM Protein Mutation Design"
+type: software
+authors:
+  - family-names: "DRYLAB-Bench"
+    given-names: "contributors"
+date-released: 2026-11-23
+license: MIT
+repository-code: "https://github.com/DRYLAB-Bench/DRYLAB-Bench"
+keywords:
+  - biosecurity
+  - protein engineering
+  - deep mutational scanning
+  - benchmark
+  - large language models
