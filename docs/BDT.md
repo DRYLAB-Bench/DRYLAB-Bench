@@ -82,14 +82,17 @@ block in the preset.
 
 ## 3. Presets and arms
 
-| Preset | Artifacts | Training | Tool menu |
-|---|---|---|---|
-| `bdt_oracle` | `data/bt_evidence/bdt_gt` | benchmark GT (leakage) | BDT + six standard BT tools |
-| `bdt_zeroshot` | `data/bt_evidence/bdt_zeroshot` | none | BDT + six standard BT tools |
-| `bdt_oracle_only` | `data/bt_evidence/bdt_gt` | benchmark GT (leakage) | BDT only |
-| `bdt_zeroshot_only` | `data/bt_evidence/bdt_zeroshot` | none | BDT only |
+| Preset | Artifacts | Training | Coverage | Tool menu |
+|---|---|---|---|---|
+| `bdt_oracle` | `data/bt_evidence/bdt_gt` | benchmark GT (leakage) | 4 shipped oracle scenarios | BDT + six standard BT tools |
+| `bdt_zeroshot` | `data/bt_evidence/bdt_zeroshot` | none | all 30 scenarios | BDT + six standard BT tools |
+| `bdt_oracle_only` | `data/bt_evidence/bdt_gt` | benchmark GT (leakage) | 4 shipped oracle scenarios | BDT only |
+| `bdt_zeroshot_only` | `data/bt_evidence/bdt_zeroshot` | none | all 30 scenarios | BDT only |
 
-All four presets inherit the 30-scenario benchmark configuration:
+The bundled oracle artifacts cover four scenarios. To run the oracle arm on
+more scenarios, train new artifacts with the scripts in §6. The zero-shot
+manifests cover all 30 scenarios. All presets inherit the benchmark model
+catalog and scenario definitions:
 
 ```bash
 drylab-bench --list-presets

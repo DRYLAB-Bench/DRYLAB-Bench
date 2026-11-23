@@ -143,10 +143,13 @@ runs/bdt/oracle_only/
 runs/bdt/zeroshot_only/
 ```
 
-The BDT presets inherit all 30 scenarios and the 15-model catalog. The
-archived BDT study used a smaller effort-ladder subset; to mirror it, add the
-model IDs to `configs/models/catalog.yaml` with your provider's native names
-and select them with `--models`. For example:
+The zero-shot presets cover all 30 scenarios; the bundled oracle presets
+cover the four scenarios for which oracle artifacts are shipped. Both inherit
+the 15-model catalog. To extend the oracle arm, train new artifacts with the
+scripts in [BDT.md](BDT.md). The archived BDT study used a smaller
+effort-ladder subset; to mirror it, add the model IDs to
+`configs/models/catalog.yaml` with your provider's native names and select
+them with `--models`. For example:
 
 ```yaml
 kimi-k3-low:

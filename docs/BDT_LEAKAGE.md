@@ -5,6 +5,8 @@ The BDT assets contain two arms with different leakage properties.
 ## `bdt_gt` — oracle arm
 
 - Trained on the benchmark's DMS ground truth.
+- The bundled oracle artifacts cover four scenarios; the preset matrix is
+  restricted to that covered subset. Train new artifacts to extend it.
 - Manifests set `labels_confirmed_non_gt: false` and
   `oracle_gt_training: true`.
 - The harness accepts these artifacts only when the preset/config sets
