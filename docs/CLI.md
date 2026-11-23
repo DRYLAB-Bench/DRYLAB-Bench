@@ -51,6 +51,24 @@ drylab-bench --preset benchmark --provider default \
 `S0` and `S1` are derived snapshots from the same `S2` trajectory. Reporting
 always covers all four conditions.
 
+## BDT reproduction presets
+
+The gated bundle adds optional presets:
+
+```bash
+drylab-bench --preset bdt_oracle --provider default \
+  --models <model-id> --step conditions
+drylab-bench --preset bdt_zeroshot --provider default \
+  --models <model-id> --step conditions
+drylab-bench --preset bdt_oracle_only --provider default \
+  --models <model-id> --step conditions
+drylab-bench --preset bdt_zeroshot_only --provider default \
+  --models <model-id> --step conditions
+```
+
+The oracle presets use GT-trained BDT artifacts and must be analyzed as a
+leakage ceiling. See [BDT.md](BDT.md) and [BDT_LEAKAGE.md](BDT_LEAKAGE.md).
+
 ## Resume and merge
 
 ```bash

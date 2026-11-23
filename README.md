@@ -55,6 +55,8 @@ criteria and [SCENARIO_TERMS.md](SCENARIO_TERMS.md) for the terms.
   reported for robustness.
 - **Refusal-aware reporting**: safety refusals, upstream provider blocks, and
   infrastructure errors are tracked separately from valid measurements.
+- **Optional BDT arms**: EVOLVEpro / VIRAL oracle and zero-shot reproduction
+  packs for the supervised-tool analysis.
 
 ## Quick start
 
@@ -92,14 +94,17 @@ The CLI reference is in [docs/CLI.md](docs/CLI.md).
 
 ## Configuration
 
-The public benchmark uses a single preset and a layered configuration:
+The default preset is `benchmark`; optional BDT reproduction presets are
+included in the gated bundle:
 
 ```text
-configs/presets/benchmark.yaml          # benchmark preset
+configs/presets/benchmark.yaml          # default benchmark preset
+configs/presets/bdt_*.yaml              # optional BDT reproduction presets
 configs/generations/config_benchmark.yaml  # scenarios, tools, budgets
 configs/models/catalog.yaml             # logical model id -> native name/params
 configs/providers/default.yaml          # OpenAI-compatible endpoint template
 configs/assets/core.yaml                # required data/model assets
+configs/assets/bdt.yaml                 # optional BDT assets
 ```
 
 Add a model by editing `configs/models/catalog.yaml`. Add a provider by
@@ -122,7 +127,19 @@ paired condition contrasts (`S2 − S0`, `S2 − S1`, `S1 − S0`,
 `S2 − S0-iter`). The precise definitions are in
 [docs/SCORING.md](docs/SCORING.md).
 
-## Reproducibility
+## Reproduction packs
+
+The gated bundle is self-contained for reproduction:
+
+- runtime biological-tool evidence and the source bundle for rebuilding it;
+- optional EVOLVEpro / VIRAL assets (oracle and zero-shot);
+- the precompute inputs for adding custom scenarios;
+- setup scripts and offline tests.
+
+Start with [docs/REPRODUCE.md](docs/REPRODUCE.md). To add a scenario, see
+[docs/EXTENDING.md](docs/EXTENDING.md). BDT setup, presets, and leakage rules
+are in [docs/BDT.md](docs/BDT.md) and
+[docs/BDT_LEAKAGE.md](docs/BDT_LEAKAGE.md).
 
 Each run writes its resolved configuration (secrets redacted), a run
 manifest, per-unit trajectories, and a coverage report. The benchmark uses

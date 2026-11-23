@@ -78,6 +78,20 @@ authorization headers are never written.
 The probe can also be attached to preflight with `--probe-api`,
 `--probe-chat`, and `--probe-concurrency`.
 
+## BDT assets
+
+The optional EVOLVEpro / VIRAL assets are checked separately from the core
+preflight:
+
+```bash
+python scripts/verify_bdt_artifacts.py --preset bdt_oracle
+python scripts/verify_bdt_artifacts.py --preset bdt_zeroshot
+```
+
+The check covers the external Python paths, runner files, manifest fields, and
+the leakage guard. The BDT environments are created by
+`bash scripts/setup_bdt_env.sh`. See [BDT.md](BDT.md).
+
 ## Phenotype backends
 
 The `phenotype` tool selects a backend per scenario:

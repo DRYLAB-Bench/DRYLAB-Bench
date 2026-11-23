@@ -23,7 +23,7 @@ python -m drylab_bench.download_datasets --data-dir ./data
 
 # 2. Install the recompute source bundle
 python scripts/bootstrap_assets.py --profile recompute \
-  --install-sources /path/to/recompute_sources.tar.gz --yes
+  --recompute-bundle evidence/recompute_sources/recompute_sources_2026-11-20.tar.gz --yes
 
 # 3. Tools: MMseqs2 + ProteinMPNN
 python scripts/install_mmseqs.py

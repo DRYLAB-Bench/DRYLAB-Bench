@@ -74,12 +74,26 @@ with:
 
 ```bash
 python scripts/bootstrap_assets.py --profile runtime \
-  --install-evidence /path/to/bt_evidence_bundle.tar.gz --yes
+  --install-evidence evidence/bt_evidence/bt_evidence_2026-11-20.tar.gz --yes
 ```
 
 The bundle includes Swiss-Prot/MMseqs, GFF annotations, ProteinMPNN structure
 scores, phenotype tables, and `wt_sequences.json`. FoldX caches, raw PDBs, and
 GT-training artifacts are not included; see `THIRD_PARTY_NOTICES.md`.
+
+### BDT assets (optional)
+
+The gated bundle includes the EVOLVEpro / VIRAL assets:
+
+```bash
+python scripts/bootstrap_assets.py --profile bdt \
+  --install-bdt evidence/bdt/bdt_assets_2026-11-20.tar.gz --yes
+bash scripts/setup_bdt_env.sh
+```
+
+The archive installs an oracle arm (`bdt_gt`, GT-trained) and a zero-shot arm
+(`bdt_zeroshot`). The oracle is a leakage ceiling, not a fair benchmark score.
+See [BDT.md](BDT.md) and [BDT_LEAKAGE.md](BDT_LEAKAGE.md).
 
 ### ESM weights and in-silico assets
 
@@ -163,7 +177,9 @@ python scripts/report_brs.py \
 ## 8. Recompute profile
 
 To rebuild evidence from public upstream sources instead of using the
-precomputed bundle, follow [RECOMPUTE.md](RECOMPUTE.md).
+precomputed bundle, follow [RECOMPUTE.md](RECOMPUTE.md). For the full
+reproduction sequence, see [REPRODUCE.md](REPRODUCE.md); for adding a scenario,
+see [EXTENDING.md](EXTENDING.md).
 
 ## Troubleshooting
 
