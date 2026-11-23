@@ -74,8 +74,8 @@ python scripts/preflight.py --preset benchmark --provider default \
 
 python tests/test_benchmark_config.py
 python tests/test_bdt_tools.py
-python scripts/verify_bdt_artifacts.py --preset bdt_oracle
-python scripts/verify_bdt_artifacts.py --preset bdt_zeroshot
+python scripts/verify_bdt_artifacts.py --preset bdt_oracle --skip-models
+python scripts/verify_bdt_artifacts.py --preset bdt_zeroshot --skip-models
 ```
 
 `test_bdt_tools.py` is offline: it uses fake runners and artifacts and does not

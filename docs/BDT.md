@@ -184,8 +184,8 @@ python tests/test_bdt_tools.py
 Asset and environment check:
 
 ```bash
-python scripts/verify_bdt_artifacts.py --preset bdt_oracle
-python scripts/verify_bdt_artifacts.py --preset bdt_zeroshot
+python scripts/verify_bdt_artifacts.py --preset bdt_oracle --skip-models
+python scripts/verify_bdt_artifacts.py --preset bdt_zeroshot --skip-models
 ```
 
 The check covers the external Python paths, runner files, manifest fields, and

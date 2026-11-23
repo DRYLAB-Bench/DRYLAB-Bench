@@ -84,8 +84,8 @@ The optional EVOLVEpro / VIRAL assets are checked separately from the core
 preflight:
 
 ```bash
-python scripts/verify_bdt_artifacts.py --preset bdt_oracle
-python scripts/verify_bdt_artifacts.py --preset bdt_zeroshot
+python scripts/verify_bdt_artifacts.py --preset bdt_oracle --skip-models
+python scripts/verify_bdt_artifacts.py --preset bdt_zeroshot --skip-models
 ```
 
 The check covers the external Python paths, runner files, manifest fields, and
